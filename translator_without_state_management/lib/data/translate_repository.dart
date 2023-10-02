@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:translator_without_state_management/common/enum.dart';
 import 'package:translator_without_state_management/common/papago.dart';
 import 'package:translator_without_state_management/data/papago_response.dart';
 
@@ -16,9 +17,13 @@ class TranslateRepository {
     );
   }
 
-  Future<PapagoResponse> translate(String source) async {
+  Future<PapagoResponse> translate(
+    String source,
+    TranslateLanguage sourceLang,
+    TranslateLanguage targetLang,
+  ) async {
     final response = await dio.request(
-      "https://openapi.naver.com/v1/papago/n2mt?source=ko&target=en&text=$source",
+      "https://openapi.naver.com/v1/papago/n2mt?source=${sourceLang.code}&target=${targetLang.code}&text=$source",
       options: Options(
         method: 'POST',
         contentType: 'application/x-www-form-urlencoded',

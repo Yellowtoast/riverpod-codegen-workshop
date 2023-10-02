@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:translator_without_state_management/common/color_util.dart';
 import 'package:translator_without_state_management/presentation/component/translate_button.dart';
 
-class TranslateBottom extends StatelessWidget {
+class TranslateButtonSection extends StatelessWidget {
   final VoidCallback onTranslate;
-  const TranslateBottom({super.key, required this.onTranslate});
+  const TranslateButtonSection({
+    super.key,
+    required this.onTranslate,
+    required this.isButtonActive,
+  });
+
+  final bool isButtonActive;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class TranslateBottom extends StatelessWidget {
             ),
             child: TranslateButton(
               onTranslate: onTranslate,
+              isButtonActive: isButtonActive,
             ),
           ),
         ),

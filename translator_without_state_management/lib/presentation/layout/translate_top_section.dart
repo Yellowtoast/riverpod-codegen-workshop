@@ -7,8 +7,8 @@ import 'package:translator_without_state_management/presentation/component/langu
 typedef TargetLanguage = TranslateLanguage;
 typedef OriginLanguage = TranslateLanguage;
 
-class TranslateTop extends StatelessWidget {
-  const TranslateTop({
+class TranslateTopSection extends StatelessWidget {
+  const TranslateTopSection({
     super.key,
     this.originLanguage,
     this.targetLanguage,
