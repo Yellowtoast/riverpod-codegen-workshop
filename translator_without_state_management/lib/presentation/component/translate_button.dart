@@ -21,7 +21,7 @@ class TranslateButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             LineIcon.language(
-              size: 16,
+              size: 18,
               color: (isButtonActive)
                   ? ColorUtil.grayScale48
                   : ColorUtil.grayScale164,
@@ -30,11 +30,11 @@ class TranslateButton extends StatelessWidget {
             Text(
               '번역하기',
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 color: (isButtonActive)
                     ? ColorUtil.grayScale12
                     : ColorUtil.grayScale164,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],

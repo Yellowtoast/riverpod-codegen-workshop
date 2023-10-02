@@ -12,17 +12,27 @@ class TranslateResultSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return switch (_screenState) {
-      TranslateScreenStateFinished(translatedText: String text) => SizedBox(
-          height: 200,
-          child: Text(
-            text,
-            style: const TextStyle(color: Colors.white),
+      TranslateScreenStateFinished(translatedText: String text) => Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              text,
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
-      TranslateScreenStateLoading() => const SizedBox(
-          height: 200,
-          width: double.infinity,
-          child: CircularProgressIndicator(),
+      TranslateScreenStateLoading() => const Expanded(
+          child: SizedBox(
+              width: 200,
+              height: 200,
+              child: Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )),
         ),
       (_) => const SizedBox.shrink(),
     };
